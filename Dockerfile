@@ -6,10 +6,10 @@ RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|
 RUN yum install -y httpd \
   zip \
 unzip
-ADD https://www.free-css.com/assets/files/free-css-templates/download/page247/kindle.zip /var/www/html/
+ADD https://files.all-free-download.com/downloadfiles/graphic/graphic_7/green_energy_website_template_6891385.zip /var/www/html/
 WORKDIR /var/www/html
-RUN unzip kindle.zip
-RUN cp -rvf markups-kindle/* .
-RUN rm -rf _MACOSX markups-kindle kindle.zip
+RUN unzip green_energy_website_template_6891385.zip
+RUN cp -rvf preview/* .
+RUN rm -rf template preview green_energy_website_template_6891385.zip
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 EXPOSE 80
